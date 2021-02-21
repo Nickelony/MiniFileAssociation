@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>MiniFileAssociation</id>
+    <version>1.0.0</version>
+    <title>MiniFileAssociation</title>
+    <authors>Kewin Kupilas</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/Nickelony/MiniFileAssociation</projectUrl>
+    <description>A minimal and lightweight library for associating file types in Windows operating systems.</description>
+    <copyright>Copyright © Kewin Kupilas 2021</copyright>
+    <tags>File Type Association Light Lightweight Minimal</tags>
+  </metadata>
+</package>
