@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace MiniFileAssociation
 {
-	public class Association
+	public static class Association
 	{
 		private const string FileExtsRegistryPath = @"Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\";
 		private const string BadExtensionMessage = "The extension has to start with a '.' character.";
