@@ -21,17 +21,17 @@ namespace MiniFileAssociation
 			if (!extension.StartsWith("."))
 				throw new ArgumentException(BadExtensionMessage);
 
+			string associatedExePath = GetAssociatedExePath(extension);
+
+			if (string.IsNullOrEmpty(associatedExePath))
+				return false;
+
+			if (!associatedExePath.Equals(exePath, StringComparison.OrdinalIgnoreCase))
+				return false;
+
 			string openMethodKeyName = GetOpenMethodKeyName(extension);
 
 			if (string.IsNullOrEmpty(openMethodKeyName))
-				return false;
-
-			string openCommandValue = GetOpenCommandValue(openMethodKeyName);
-
-			if (string.IsNullOrEmpty(openCommandValue))
-				return false;
-
-			if (!openCommandValue.Equals($"\"{exePath}\" \"%1\"", StringComparison.OrdinalIgnoreCase))
 				return false;
 
 			string progId = GetProgId(extension);
@@ -58,9 +58,9 @@ namespace MiniFileAssociation
 				return null;
 
 			string openCommandValue = GetOpenCommandValue(openMethodKeyName);
-			var match = Regex.Match(openCommandValue, "^\"(.*)\"");
+			var match = Regex.Match(openCommandValue, "^(\"?.*\"?)\\s\"?%1\"?$");
 
-			return match.Success ? match.Groups[1].Value : null;
+			return match.Success ? match.Groups[1].Value.Trim('"') : null;
 		}
 
 		/// <summary>
