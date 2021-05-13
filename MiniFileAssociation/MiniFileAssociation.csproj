@@ -8,6 +8,7 @@
 		<RepositoryUrl>https://github.com/Nickelony/MiniFileAssociation</RepositoryUrl>
 		<Description>A minimal and lightweight library for associating file types in Windows operating systems.</Description>
 		<PackageTags>file type association associating associate light lightweight minimal windows</PackageTags>
+		<Version>1.0.1</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
